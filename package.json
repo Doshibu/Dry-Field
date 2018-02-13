@@ -2,9 +2,12 @@
   "name": "dry-field",
   "version": "1.0.0",
   "description": "Farmer simulation game",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "npm i && npm run quality --verbose",
+    "test": "node node_modules/mocha/bin/mocha --recursive",
+    "start": "node node_modules/nodemon/bin/nodemon ./server.js",
+    "quality": "node  node_modules/eslint/bin/eslint **/*.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +26,12 @@
     "eslint-plugin-node": "^6.0.0",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
-    "mocha": "^5.0.0"
+    "mocha": "^5.0.0",
+    "nodemon": "^1.14.12"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "path": "^0.12.7"
   }
 }
