@@ -1,10 +1,11 @@
-#  :rage3: DryField  :smile_cat:
+#  :seedling:  DryField  :ear_of_rice:
 *Farmer simulation game*
 
 It was a school project. 
 Main goal : Make an autonomous javascript application that communicates with a REST web API.
 
 On the other hand, the game goal is to make as many crops as possible.
+
 Furthor more explanation are available below, in English & in French (yeah, we are French :sunglasses: !!).
 
 ---
@@ -69,12 +70,12 @@ L’objectif de temps moyen de jeu est de 10 minutes et le temps maximum 15 minu
 
 ---
 
-## How to play ?  :running:
+## How to play ?  :leaves:
 
 ### Game Environment
 
 
-### Here we go ! During the simulation
+### Here we go :mushroom: ! During the simulation
 * While is the game is running, ...
 
 ## Credits ##
