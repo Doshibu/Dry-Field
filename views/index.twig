@@ -12,17 +12,19 @@
   <body>
     <div id="game-container">
         <section id="actions">
-            <div class="action-child">
+            {# {% include "../app/features/wallet.twig" %} #}
+            <div id="wallet" class="action-child">
                 <img src="assets/banque.png" alt="" />
                 <p>
-                  0&nbsp;&euro;
+                0&nbsp;&euro;
                 </p>
             </div>
 
-            <div class="action-child">
-                <img src="assets/citern.png" alt="" />
+            {# {% include citern.twig %} #}
+            <div id="main-citern" class="action-child">
+                <img src="assets/citern.png" alt=""/>
                 <p>
-                  0&nbsp;&euro;
+                    0&nbsp;L
                 </p>
             </div>
         </section>
@@ -30,5 +32,6 @@
 
         </section>
     </section>
+    <script src="../app/index.js"></script>
   </body>
 </html>
