@@ -12,7 +12,15 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
 
-mongoose.connect(dbURI, { useMongoClient: true })
+app.set('view engine', 'twig')
+app.get('/', function (req, res) {
+  res.render('index.twig')
+})
+
+let server = app.listen(app.get('port'), function () {
+    console.log('Express server listening on port ' + server.address().port)
+    mongoose.connect(dbURI, {useMongoClient: true})
+})
 
 mongoose.connection.on('connected', () => {
     console.log('Mongoose default connection open to ' + dbURI)
@@ -32,7 +40,3 @@ process.on('SIGINT', () => {
         process.exit(0)
     })
 })
-
-// const server = app.listen(app.get('port'), function () {
-//   console.log('Express server listening on port ' + server.address().port)
-// })

@@ -1,0 +1,58 @@
+.setSize (@size) {
+    width: @size;
+    height: @size;
+}
+
+body {
+    font-size: 16px;
+    
+    #game-container {
+        background: url('../assets/background.jpg') no-repeat center center;
+        background-size: cover;
+        .setSize(100%);
+        position: fixed;
+    
+        #actions {
+            width: 65%;
+            display: flex;
+            align-content: center;
+            margin: 100px auto 0;
+            justify-content: space-around;
+    
+            .action-child {
+                width: 250px;
+                text-align: center;
+                background: #808080db;
+                position: relative;
+                
+                &:nth-child(1), &:nth-child(1) p {
+                    background: #c3b75ddb;
+                }
+
+                &:nth-child(2), &:nth-child(2) p {
+                    background: #577bbddb;
+                }
+
+                &:nth-child(2) img {
+                    width: 150px;
+                }
+    
+                p {
+                    background: #808080a1;
+                    margin-bottom: 0;
+                    bottom: 0;
+                    position: absolute;
+                    width: 100%;
+                    font-size: 1.2em;
+                    color: white;
+                    font-weight: bold;
+                }
+            }
+        }
+    
+        #fields {
+    
+        }
+    }
+}
+

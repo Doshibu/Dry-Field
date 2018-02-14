@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Dry Field</title>
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <link rel="stylesheet/less" type="text/css" href="css/style.less" />
+      <script src="js/less.js" type="text/javascript"></script>
+
+      <link rel="icon" href="assets/favicon.png" type="image/png">
+  </head>
+  <body>
+    <div id="game-container">
+        <section id="actions">
+            {# {% include "../app/features/wallet.twig" %} #}
+            <div id="wallet" class="action-child">
+                <img src="assets/banque.png" alt="" />
+                <p>
+                0&nbsp;&euro;
+                </p>
+            </div>
+
+            {# {% include citern.twig %} #}
+            <div id="main-citern" class="action-child">
+                <img src="assets/citern.png" alt=""/>
+                <p>
+                    0&nbsp;L
+                </p>
+            </div>
+        </section>
+        <section id="fields">
+
+        </section>
+    </section>
+    <script src="../app/index.js"></script>
+  </body>
+</html>
