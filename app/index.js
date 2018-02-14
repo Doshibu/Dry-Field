@@ -1,7 +1,8 @@
 import { querySelectors, getElement } from 'querySelector'
 
-const wallet =  getElement(querySelectors.wallet)
+const wallet = getElement(querySelectors.wallet)
+
 console.log(wallet)
-if(wallet) {
+if (wallet) {
     prompt('Yeah !')
 }
