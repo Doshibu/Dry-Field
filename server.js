@@ -8,15 +8,16 @@ app.set('port', process.env.PORT || 3000)
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(express.static(path.join(__dirname, 'public')))
 
 app.set('view engine', 'twig')
-app.get('/', function(req, res){
-  res.render('index.twig');
-})
+app.set('views', path.join(__dirname, '/app/views'))
+app.use('/static', express.static(path.join(__dirname, 'public')))
+app.use('/app', express.static(path.join(__dirname, 'app')))
 
+app.get('/', (req, res) => {
+  res.render('index.twig')
+})
 
 var server = app.listen(app.get('port'), function () {
   console.log('Express server listening on port ' + server.address().port)
 })
-
