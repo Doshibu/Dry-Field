@@ -7,7 +7,7 @@
     "pretest": "npm i && npm run quality --verbose",
     "test": "node node_modules/mocha/bin/mocha --recursive",
     "start": "node node_modules/nodemon/bin/nodemon ./server.js",
-    "quality": "node  node_modules/eslint/bin/eslint **/*.js & exit 0"
+    "quality": "node node_modules/eslint/bin/eslint **/*.js & exit 0"
   },
   "repository": {
     "type": "git",
@@ -20,17 +20,22 @@
   },
   "homepage": "https://github.com/Doshibu/Dry-Field#readme",
   "devDependencies": {
+    "babel-brunch": "^6.1.1",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
+    "brunch": "^2.10.12",
+    "clean-css-brunch": "^2.10.0",
     "eslint": "^4.17.0",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^6.0.0",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
+    "html-pages-brunch": "^2.7.0",
+    "less-brunch": "^2.10.0",
     "mocha": "^5.0.0",
     "nodemon": "^1.14.12"
   },
