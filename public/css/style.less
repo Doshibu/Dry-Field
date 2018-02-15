@@ -6,6 +6,25 @@
 body {
     font-size: 16px;
     margin: 0;
+
+    #score {
+        position: fixed;
+        z-index: 5;
+        font-size: 4em;
+        top: 50px;
+        left: 50px;
+        color: #631b04;
+        display: flex;
+        opacity: 0;
+        transition: opacity 1.2s ease-in;
+
+        img {
+            width: 55px;
+            position: absolute;
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+    }
     #game-container {
         background: url('../assets/background.jpg') no-repeat center center;
         background-size: cover;
@@ -23,7 +42,6 @@ body {
                 background: #808080db;
                 position: relative;
                 border-radius: 25px;
-                
                 &:hover {
                     cursor: pointer;
                 }
@@ -56,12 +74,10 @@ body {
             justify-content: space-around;
             width: 65%;
             margin: 100px auto;
-            
             .field {
                 &:hover {
                     cursor: pointer;
                 }
-                
                 img {
                     width: 200px;
                     display: block;
@@ -70,13 +86,11 @@ body {
                     background: #c3b75ddb;
                     transition: background-color 0.7s ease;
                 }
-
                 .field-progress {
                     width: 100%;
                     background-color: #ddd;
                     display: block;
                     margin: 15px auto;
-
                     div {
                         width: 10%;
                         height: 30px;
@@ -84,16 +98,13 @@ body {
                         line-height: 30px;
                         color: white;
                     }
-
                     &.harvest div {
                         background-color: #4CAF50;
                     }
-
                     &.water div {
                         background-color: #577bbddb;
                     }
                 }
-
                 button {
                     margin: 15px auto;
                     display: block;
@@ -108,16 +119,13 @@ body {
                     border-radius: 15px;
                     cursor: pointer;
                 }
-
                 &.completed {
                     img {
                         background-color: #577bbddb;
                     }
-
                     progress {
                         opacity: 0;
                     }
-
                     button {
                         opacity: 1;
                     }

@@ -11,6 +11,11 @@
         <link rel="icon" href="static/assets/favicon.png" type="image/png">
     </head>
     <body>
+        <div id="score">
+            <div>0</div>
+            <img src="/static/assets/field.png" alt="score"/>
+        </div>
+
         <div id="game-container">
             <section id="actions">
                 <div id="wallet" class="action-child">
@@ -30,22 +35,34 @@
             <section id="fields">
                 <div class="field">
                     <img src="/static/assets/field.png" alt=""/>
-                    <div class="field-progress water"><div>0%</div></div>
-                    <div class="field-progress harvest"><div>0%</div></div>
+                    <div class="field-progress water">
+                        <div>0%</div>
+                    </div>
+                    <div class="field-progress harvest">
+                        <div>0%</div>
+                    </div>
                     <button type="button" class="btn-harvest">Vendez la récolte</button>
                 </div>
 
                 <div class="field">
                     <img src="/static/assets/field.png" alt=""/>
-                    <div class="field-progress water"><div>0%</div></div>
-                    <div class="field-progress harvest"><div>0%</div></div>
+                    <div class="field-progress water">
+                        <div>0%</div>
+                    </div>
+                    <div class="field-progress harvest">
+                        <div>0%</div>
+                    </div>
                     <button type="button" class="btn-harvest">Vendez la récolte</button>
                 </div>
 
                 <div class="field">
                     <img src="/static/assets/field.png" alt=""/>
-                    <div class="field-progress water"><div>0%</div></div>
-                    <div class="field-progress harvest"><div>0%</div></div>
+                    <div class="field-progress water">
+                        <div>0%</div>
+                    </div>
+                    <div class="field-progress harvest">
+                        <div>0%</div>
+                    </div>
                     <button type="button" class="btn-harvest">Vendez la récolte</button>
                 </div>
             </section>
@@ -62,7 +79,9 @@
             }, 250);
 
             // Autorequire modules transpiled into main app.js
-            const requireModule = ['public/js/features/citern/controller.js', 'public/js/features/field/controller.js', 'public/js/features/score/controller.js', 'public/js/features/wallet/controller.js']
+            const requireModule = ['public/js/features/citern/controller.js', 
+            'public/js/features/field/controller.js',
+            'public/js/features/wallet/controller.js']
             requireModule.forEach((v, i) => {
                 require(v)
             })

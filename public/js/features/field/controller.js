@@ -19,6 +19,10 @@ fields.each((index, field) => {
 
   $(field).find('.btn-harvest').click((e) => {
     if (isWaitingForHarvest === true) {
+      const score = $('#score > div')
+      score.text(parseInt(score.text()) + 1)
+      $('#score').attr('style', 'opacity: 1')
+
       setMoney(getMoney() + 40)
       setBarValue($(field).find('.field-progress.water > div'), 0)
       setBarValue($(field).find('.field-progress.harvest > div'), 0)
