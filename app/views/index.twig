@@ -43,6 +43,8 @@
             </div>
         </section>
     </section>
+    <script src="/static/js/lib/jquery.3.3.1.min.js" type="text/javascript"></script>
+    <script src="/static/js/app.js" type="text/javascript"></script>
     <script>
         window.sr = ScrollReveal({
             'origin': 'bottom',
@@ -55,11 +57,16 @@
         sr.reveal('#fields > *', {
             delay: 500
         }, 250);
+
+        const requireModule = [
+            'features/citern/controller.js',
+            'features/field/controller.js',
+            'features/score/controller.js',
+            'features/wallet/controller.js'
+        ]
+        requireModule.forEach((v, i) => {
+            require(v)
+        })
     </script>
-    <script src="/static/js/app.js" type="text/javascript"></script>
-    <!-- <script src="/app/features/wallet/controller.js"></script>
-    <script src="/app/features/citern/controller.js"></script>
-    <script src="/app/features/score/controller.js"></script>
-    <script src="/app/features/field/controller.js"></script> -->
   </body>
 </html>

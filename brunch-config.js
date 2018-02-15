@@ -13,6 +13,12 @@ exports.files = {
   }
 }
 
+// exports.modules = {
+//   autoRequire: {
+//     'public/js/app.js': ['features/wallet/controller.js']
+//   }
+// }
+
 exports.plugins = {
   keyword: {
     filePattern: /\.(js|css|html|json)$/,
