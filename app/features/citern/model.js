@@ -8,5 +8,4 @@ class Citern {
 }
 
 module.exports = {
-    Citern
-}
+Citern}

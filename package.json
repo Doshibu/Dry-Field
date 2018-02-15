@@ -6,6 +6,7 @@
   "scripts": {
     "pretest": "npm i && npm run quality --verbose",
     "test": "node node_modules/mocha/bin/mocha --recursive",
+    "prestart": "node_modules/.bin/brunch build",
     "start": "node node_modules/nodemon/bin/nodemon ./server.js",
     "quality": "node node_modules/eslint/bin/eslint **/*.js & exit 0"
   },
@@ -38,12 +39,14 @@
     "less-brunch": "^2.10.0",
     "mocha": "^5.0.0",
     "chai": "^4.1.2",
+    "expect": "^22.3.0",
     "nodemon": "^1.14.12"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "jquery": "^3.3.1",
     "mongoose": "^5.0.5",
     "path": "^0.12.7",
     "twig": "^1.10.5"

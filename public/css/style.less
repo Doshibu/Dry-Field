@@ -6,38 +6,34 @@
 body {
     font-size: 16px;
     margin: 0;
-    
     #game-container {
         background: url('../assets/background.jpg') no-repeat center center;
         background-size: cover;
         .setSize(100%);
         position: fixed;
-    
         #actions {
             width: 65%;
             display: flex;
             align-content: center;
             margin: 100px auto 0;
             justify-content: space-around;
-    
             .action-child {
                 width: 250px;
                 text-align: center;
                 background: #808080db;
                 position: relative;
-                
-                &:nth-child(1), &:nth-child(1) p {
+                border-radius: 25px;
+                &:nth-child(1),
+                &:nth-child(1) p {
                     background: #c3b75ddb;
                 }
-
-                &:nth-child(2), &:nth-child(2) p {
+                &:nth-child(2),
+                &:nth-child(2) p {
                     background: #577bbddb;
                 }
-
                 &:nth-child(2) img {
                     width: 150px;
                 }
-    
                 p {
                     background: #808080a1;
                     margin-bottom: 0;
@@ -50,10 +46,28 @@ body {
                 }
             }
         }
-    
         #fields {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 65%;
+            margin: 100px auto;
+            
+            .field {
+                
+                img {
+                    width: 200px;
+                    border-radius: 50%;
+                    border: 2px solid yellow;
+                    background: #c3b75ddb;
+                    transition: background-color 0.7s ease;
+                    @color: #E94E3D;
     
+                    &:hover, &.completed {
+                        background-color: #577bbddb;
+                    }
+                }
+            }
         }
     }
 }
-

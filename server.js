@@ -3,13 +3,14 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const app = express()
 const mongoose = require('mongoose')
-
+const $ = require('jquery')
 const dbURI = 'mongodb://louis:password@ds233748.mlab.com:33748/dry-field'
 
 // const ScoreController = require('./app/features/score/controller')
 mongoose.connect(dbURI)
 const db = mongoose.connection
 db.connection.on('connected', () => {
+
     console.log('Mongoose default connection open to ' + dbURI)
     // ScoreController.saveScore(10, 'louis')
     // ScoreController.getAllScore()
@@ -29,10 +30,11 @@ process.on('SIGINT', () => {
         process.exit(0)
     })
 })
+mongoose.connect(dbURI)
 
 app.set('port', process.env.PORT || 3000)
 app.set('view engine', 'twig')
-app.set('views', path.join(__dirname, '/app/views'))
+app.set('views', path.join(__dirname, 'app/views'))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
