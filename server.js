@@ -5,14 +5,9 @@ const app = express()
 
 const server = require('http').createServer(app)
 const io = require('socket.io').listen(server)
-// New socket
 io.sockets.on('connection', function (pSocket) {
   console.log('Client connected !')
-
 })
-
-const mongoose = require('mongoose')
-const dbURI = 'mongodb://louis:password@ds233748.mlab.com:33748/dry-field'
 
 app.set('port', process.env.PORT || 3000)
 app.set('view engine', 'twig')
@@ -31,6 +26,8 @@ server.listen(app.get('port'), function () {
   console.log('Express server listening on port ' + server.address().port)
 })
 
+const mongoose = require('mongoose')
+const dbURI = 'mongodb://louis:password@ds233748.mlab.com:33748/dry-field'
 // // const ScoreController = require('./app/features/score/controller')
 // // mongoose.connect(dbURI)
 // const db = mongoose.connection
