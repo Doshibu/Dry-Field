@@ -1,6 +1,6 @@
 const assert = require('assert')
 // const server = require('../server')
-const ScoreController = require('../app/features/score/controller')
+const ScoreController = require('../app/score/controller')
 const expect = require('expect')
 
 const mongoose = require('mongoose')
