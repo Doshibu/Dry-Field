@@ -8,6 +8,7 @@ const io = require('socket.io').listen(server)
 // New socket
 io.sockets.on('connection', function (pSocket) {
   console.log('Client connected !')
+
 })
 
 const mongoose = require('mongoose')
