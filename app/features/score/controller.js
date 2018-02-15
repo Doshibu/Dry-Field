@@ -1,6 +1,4 @@
-// const Score = require('./model')
-// const mongoose = require('mongoose')
-// mongoose.Promise = global.Promise
+const Score = require('./model')
 
 module.exports = {
     getAllScore: () => {
