@@ -5,7 +5,7 @@ const scoreSchema = mongoose.Schema({
     playerName: {type: String}
 })
 
-const ScoreModel = mongoose.model('score', scoreSchema)
+const ScoreModel = mongoose.model('scores', scoreSchema)
 
 module.exports = {
     ScoreModel
