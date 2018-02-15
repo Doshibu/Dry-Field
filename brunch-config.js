@@ -1,23 +1,17 @@
 exports.paths = {
   public: 'public',
-  watched: ['app']
+  watched: ['public/css', 'public/js/features']
 }
 exports.files = {
   javascripts: {
     joinTo: {
-      'js/app.js': /^app/
+      'js/app.js': 'public/js/features'
     }
   },
   stylesheets: {
     joinTo: 'css/app.css'
   }
 }
-
-// exports.modules = {
-//   autoRequire: {
-//     'public/js/app.js': ['features/wallet/controller.js']
-//   }
-// }
 
 exports.plugins = {
   keyword: {
