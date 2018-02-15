@@ -6,7 +6,7 @@ module.exports = {
     getAllScore: () => {
         Score.ScoreModel.find({}, (err, results) => {
             if (err) {
-                console.log('error')
+                console.log(err)
             }
             console.log(results)
         })
@@ -15,7 +15,7 @@ module.exports = {
         const toSave = new Score.ScoreModel()
         toSave.points = number
         toSave.playerName = name
-        toSave.save(number, (err, result) => {
+        toSave.save((err, result) => {
             if (err) {
                 console.log(err)
             }

@@ -1,23 +1,25 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
-
-const mongoose = require('mongoose')
-const dbURI = 'mongodb://louis:password@ds233748.mlab.com:33748/dry-field'
 const app = express()
-// const ScoreController = require('./app/features/score/controller')
+const mongoose = require('mongoose')
 
-mongoose.connection.on('connected', () => {
+const dbURI = 'mongodb://louis:password@ds233748.mlab.com:33748/dry-field'
+
+// const ScoreController = require('./app/features/score/controller')
+mongoose.connect(dbURI)
+const db = mongoose.connection
+db.connection.on('connected', () => {
     console.log('Mongoose default connection open to ' + dbURI)
     // ScoreController.saveScore(10, 'louis')
     // ScoreController.getAllScore()
 })
 
-mongoose.connection.on('error', (err) => {
+db.connection.on('error', (err) => {
     console.log('Mongoose default connection error: ' + err)
 })
 
-mongoose.connection.on('disconnected', () => {
+db.connection.on('disconnected', () => {
     console.log('Mongoose default connection disconnected')
 })
 
@@ -27,7 +29,6 @@ process.on('SIGINT', () => {
         process.exit(0)
     })
 })
-mongoose.connect(dbURI)
 
 app.set('port', process.env.PORT || 3000)
 app.set('view engine', 'twig')
@@ -45,3 +46,7 @@ app.get('/', (req, res) => {
 const server = app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + server.address().port)
 })
+
+module.exports = {
+    db
+}
