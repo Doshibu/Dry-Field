@@ -1,10 +1,11 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
-
 const mongoose = require('mongoose')
-const dbURI = 'mongodb://louis:P@ssword1@ds233748.mlab.com:33748/dry-field'
 const app = express()
+const $ = require('jquery')
+
+const dbURI = 'mongodb://louis:password@ds233748.mlab.com:33748/dry-field'
 mongoose.connection.on('connected', () => {
   console.log('Mongoose default connection open to ' + dbURI)
 })
@@ -23,11 +24,11 @@ process.on('SIGINT', () => {
     process.exit(0)
   })
 })
-mongoose.connect(dbURI)
+// mongoose.connect(dbURI)
 
 app.set('port', process.env.PORT || 3000)
 app.set('view engine', 'twig')
-app.set('views', path.join(__dirname, '/app/views'))
+app.set('views', path.join(__dirname, 'app/views'))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))

@@ -12,13 +12,12 @@
 // const Citern = mongoose.model('citern', citernSchema)
 
 class Citern {
-    constructor (isGlobal, consumtion, id) {
-        this.consumtion = consumtion
-        this.id = id
-        this.isGlobal = isGlobal
-    }
+  constructor (isGlobal, consumtion, id) {
+    this.consumtion = consumtion
+    this.id = id
+    this.isGlobal = isGlobal
+  }
 }
 
 module.exports = {
-    Citern
-}
+Citern}
