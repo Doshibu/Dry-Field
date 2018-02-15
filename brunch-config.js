@@ -7,9 +7,6 @@ exports.files = {
     joinTo: {
       'js/app.js': 'public/js/features'
     }
-  },
-  stylesheets: {
-    joinTo: 'css/app.css'
   }
 }
 
