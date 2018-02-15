@@ -1,6 +1,10 @@
-// import { querySelectors } from '../../querySelectors'
-
 const walletElement = $('#wallet')
-walletElement.click((e) => {
-  console.log('Wallet clicked')
-})
+const defaultMoney = 50
+
+const getLabel = () => walletElement.find('span')
+
+export const getMoney = () => parseInt(getLabel().text() || 0)
+
+export const setMoney = (money) => getLabel().text(money)
+
+setMoney(defaultMoney)
