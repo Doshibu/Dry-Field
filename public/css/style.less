@@ -7,6 +7,50 @@ body {
     font-size: 16px;
     margin: 0;
 
+    #end-game-wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        font-size: 2.5em;
+        text-align: center;
+        background: #000000c9;
+        padding: 150px 0;
+        color: wheat;
+
+        &.open {
+            z-index: 15;
+        }
+
+        p {
+            &:nth-child(1) {
+                color: #ec1b1b;
+            }
+            &:nth-child(3) button {
+                margin: 15px auto;
+                display: block;
+                padding: 7px 15px;
+                background: #585642db;
+                color: white;
+                font-size: 1em;
+                border-style: outset;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    #clockdiv {
+        position: fixed;
+        z-index: 5;
+        width: 100%;
+        text-align: center;
+        top: 50px;
+        font-size: 3em;
+    }
+
     #score {
         position: fixed;
         z-index: 5;

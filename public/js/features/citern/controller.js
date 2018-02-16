@@ -9,7 +9,7 @@ const getLabel = () => mainCiternElement.find('span')
 
 export const getWater = () => parseInt(getLabel().text() || 0)
 
-export const setWater = (water) => getLabel().text(water)
+export const setWater = (water) => getLabel().text(getWater() + water)
 
 setWater(citernCapacity / 2)
 
@@ -17,7 +17,7 @@ function buyWater () {
   const money = getMoney()
   const water = getWater()
   if (money > refillCost && water < citernCapacity) {
-    setMoney(money - refillCost) && setWater(water + refill)
+    setMoney(-refillCost) && setWater(refill)
   }
 }
 

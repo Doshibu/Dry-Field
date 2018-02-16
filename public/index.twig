@@ -11,6 +11,15 @@
         <link rel="icon" href="static/assets/favicon.png" type="image/png">
     </head>
     <body>
+        <div id="end-game-wrapper">
+            <p>Game Over</p>
+            <p>You harvested and sold <span id="wrapper-score"></span> field</p>
+            <p>
+                Wanna see score&nbsp;?
+                <button id="get-score-btn" type="button">Get it !</button>
+            </p>
+        </div>
+        <div id="clockdiv"></div>
         <div id="score">
             <div>0</div>
             <img src="/static/assets/field.png" alt="score"/>
@@ -80,8 +89,10 @@
 
             // Autorequire modules transpiled into main app.js
             const requireModule = ['public/js/features/citern/controller.js', 
-            'public/js/features/field/controller.js',
-            'public/js/features/wallet/controller.js']
+            'public/js/features/field/controller.js', 
+            'public/js/features/score/controller.js', 
+            'public/js/features/score/controller.js', 
+            'public/js/features/timer.js']
             requireModule.forEach((v, i) => {
                 require(v)
             })

@@ -1,5 +1,6 @@
 import { getWater, setWater } from '../citern/controller'
-import { getMoney, setMoney } from '../wallet/controller'
+import { setMoney } from '../wallet/controller'
+import { incrementScore } from '../score/controller'
 
 let isWaitingForHarvest = false
 const setIsWaitingForHarvest = (field) => {
@@ -19,11 +20,8 @@ fields.each((index, field) => {
 
   $(field).find('.btn-harvest').click((e) => {
     if (isWaitingForHarvest === true) {
-      const score = $('#score > div')
-      score.text(parseInt(score.text()) + 1)
-      $('#score').attr('style', 'opacity: 1')
-
-      setMoney(getMoney() + 40)
+      incrementScore()
+      setMoney(40)
       setBarValue($(field).find('.field-progress.water > div'), 0)
       setBarValue($(field).find('.field-progress.harvest > div'), 0)
       setIsWaitingForHarvest($(field))
@@ -33,7 +31,7 @@ fields.each((index, field) => {
 
 function addWater (field) {
   if (getWater() >= 10 && !isWaitingForHarvest) {
-    setWater(getWater() - 10)
+    setWater(-10)
     fillWater(field)
   }
 }
