@@ -18,3 +18,7 @@ node_modules
 \.idea/
 /public/js/app.js
 /public/js/app.js.map
+/public/css/app.css
+/public/css/app.css.map
+eslint.xml
+package-lock.json

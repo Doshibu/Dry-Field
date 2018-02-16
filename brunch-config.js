@@ -1,15 +1,12 @@
 exports.paths = {
   public: 'public',
-  watched: ['public/css', 'public/js/features']
+  watched: ['public/js/features']
 }
 exports.files = {
   javascripts: {
     joinTo: {
-      'js/app.js': 'public/js/features'
+      'js/app.js': /^public\/js\/features/
     }
-  },
-  stylesheets: {
-    joinTo: 'css/app.css'
   }
 }
 

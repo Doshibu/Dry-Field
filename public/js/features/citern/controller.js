@@ -1,22 +1,24 @@
-const citernElement = $('#main-citern')
-citernElement.click((e) => {
-  console.log('Citern clicked')
-})
+import { setMoney, getMoney } from '../wallet/controller'
 
-// module.exports = {
-//     fillCitern: (id, nbLitre) => {
-//         return new Promise((resolve, reject) => {
-//           console.log('fill citern')
-//            CiternModel.findByIdAndUpdate(id, nbLitre, (err, result) => {
-//                if (err) {
-//                    reject(err)
-//                }
-//                resolve(result)
-//            })
-//         })
-//     },
-//     stateCitern: (id) => {
-//         console.log('check citern')
-//         CiternModel.find({'_id': id})
-//     }
-// }
+const mainCiternElement = $('#main-citern')
+const citernCapacity = 40
+const refill = 10
+const refillCost = 10
+
+const getLabel = () => mainCiternElement.find('span')
+
+export const getWater = () => parseInt(getLabel().text() || 0)
+
+export const setWater = (water) => getLabel().text(water)
+
+setWater(citernCapacity / 2)
+
+function buyWater () {
+  const money = getMoney()
+  const water = getWater()
+  if (money > refillCost && water < citernCapacity) {
+    setMoney(money - refillCost) && setWater(water + refill)
+  }
+}
+
+mainCiternElement.click((e) => buyWater())

@@ -23,6 +23,10 @@ body {
                 background: #808080db;
                 position: relative;
                 border-radius: 25px;
+                
+                &:hover {
+                    cursor: pointer;
+                }
                 &:nth-child(1),
                 &:nth-child(1) p {
                     background: #c3b75ddb;
@@ -54,17 +58,68 @@ body {
             margin: 100px auto;
             
             .field {
+                &:hover {
+                    cursor: pointer;
+                }
                 
                 img {
                     width: 200px;
+                    display: block;
                     border-radius: 50%;
                     border: 2px solid yellow;
                     background: #c3b75ddb;
                     transition: background-color 0.7s ease;
-                    @color: #E94E3D;
-    
-                    &:hover, &.completed {
+                }
+
+                .field-progress {
+                    width: 100%;
+                    background-color: #ddd;
+                    display: block;
+                    margin: 15px auto;
+
+                    div {
+                        width: 10%;
+                        height: 30px;
+                        text-align: center;
+                        line-height: 30px;
+                        color: white;
+                    }
+
+                    &.harvest div {
+                        background-color: #4CAF50;
+                    }
+
+                    &.water div {
                         background-color: #577bbddb;
+                    }
+                }
+
+                button {
+                    margin: 15px auto;
+                    display: block;
+                    opacity: 0;
+                    transition: opacity 0.7s ease;
+                    padding: 7px 15px;
+                    background: #585642db;
+                    color: white;
+                    font-size: 1em;
+                    font-weight: 100;
+                    border-style: outset;
+                    border-radius: 15px;
+                    cursor: pointer;
+                }
+
+                &.completed {
+                    img {
+                        background-color: #577bbddb;
+                    }
+
+                    progress {
+                        opacity: 0;
+                    }
+
+                    button {
+                        opacity: 1;
                     }
                 }
             }

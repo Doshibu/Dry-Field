@@ -8,7 +8,7 @@ mongoose.Promise = global.Promise
 
 let db
 before((done) => {
-    mongoose.connect('mongodb://louis:password@ds233748.mlab.com:33748/dry-field')
+  mongoose.connect('mongodb://louis:password@ds233748.mlab.com:33748/dry-field')
 
     db = mongoose.connection
     db.once('open', () => done())
