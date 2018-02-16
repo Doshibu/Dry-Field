@@ -50,6 +50,6 @@ io.sockets.on('connection', function (pSocket) {
   // Save a score
   pSocket.on('save-score', function (data) {
     console.log('Saving score')
-    ScoreController.saveScore(data.score, data.playerName)
+    ScoreController.saveScore({points: data.score, playerName: data.playerName})
   })
 })
