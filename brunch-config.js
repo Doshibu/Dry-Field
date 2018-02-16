@@ -7,20 +7,36 @@ exports.files = {
     joinTo: {
       'js/app.js': /^public\/js\/features/
     }
+  },
+  stylesheets: {
+    joinTo: {
+      'css/app.css': /^public\/css/
+    }
   }
 }
 
 exports.plugins = {
-  keyword: {
-    filePattern: /\.(js|css|html|json)$/,
-    extraFiles: []
-  },
   babel: {
     presets: ['env'],
     plugins: ['transform-object-rest-spread'],
     ignore: [
       /^node_modules/
     ]
+  },
+  uglify: {
+    mangle: true,
+    compress: {
+      global_defs: {
+        DEBUG: false
+      }
+    }
+  },
+  imageoptimizer: {
+    smushit: true,
+    path: 'assets'
+  },
+  less: {
+    dumpLineNumbers: 'comments'
   }
 }
 

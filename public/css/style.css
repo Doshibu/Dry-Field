@@ -1,0 +1,177 @@
+body {
+  font-size: 16px;
+  margin: 0;
+}
+body #end-game-wrapper {
+  display: flex;
+  z-index: -1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  font-size: 2.5em;
+  text-align: center;
+  background: #000000c9;
+  color: wheat;
+}
+body #end-game-wrapper.open {
+  display: block;
+  z-index: 15;
+}
+body #end-game-wrapper p {
+  visibility: hidden;
+}
+body #end-game-wrapper p:nth-child(1) {
+  color: #ec1b1b;
+}
+body #end-game-wrapper p:nth-child(2) input {
+  display: block;
+  margin: auto;
+  border-radius: 5px;
+}
+body #end-game-wrapper p:nth-child(2) button,
+body #end-game-wrapper p:nth-child(3) button {
+  margin: 15px auto;
+  display: block;
+  padding: 7px 15px;
+  background: #585642db;
+  color: white;
+  font-size: 1em;
+  border-style: outset;
+  border-radius: 15px;
+  cursor: pointer;
+}
+body #clockdiv {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  text-align: center;
+  top: 50px;
+  font-size: 3em;
+}
+body #score {
+  position: fixed;
+  z-index: 5;
+  font-size: 4em;
+  top: 50px;
+  left: 50px;
+  color: #631b04;
+  display: flex;
+  opacity: 0;
+  transition: opacity 1.2s ease-in;
+}
+body #score img {
+  width: 55px;
+  position: absolute;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+body #game-container {
+  background: url('../assets/background.jpg') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+body #game-container #actions {
+  width: 65%;
+  display: flex;
+  align-content: center;
+  margin: 100px auto 0;
+  justify-content: space-around;
+}
+body #game-container #actions .action-child {
+  width: 250px;
+  text-align: center;
+  background: #808080db;
+  position: relative;
+  border-radius: 25px;
+}
+body #game-container #actions .action-child:hover {
+  cursor: pointer;
+}
+body #game-container #actions .action-child:nth-child(1),
+body #game-container #actions .action-child:nth-child(1) p {
+  background: #c3b75ddb;
+}
+body #game-container #actions .action-child:nth-child(2),
+body #game-container #actions .action-child:nth-child(2) p {
+  background: #577bbddb;
+}
+body #game-container #actions .action-child:nth-child(2) img {
+  width: 150px;
+}
+body #game-container #actions .action-child p {
+  background: #808080a1;
+  margin-bottom: 0;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  font-size: 1.2em;
+  color: white;
+  font-weight: bold;
+}
+body #game-container #fields {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 65%;
+  margin: 100px auto;
+}
+body #game-container #fields .field:hover {
+  cursor: pointer;
+}
+body #game-container #fields .field img {
+  width: 200px;
+  display: block;
+  border-radius: 50%;
+  border: 2px solid yellow;
+  background: #c3b75ddb;
+  transition: background-color 0.7s ease;
+}
+body #game-container #fields .field .field-progress {
+  width: 100%;
+  background-color: #ddd;
+  display: block;
+  margin: 15px auto;
+}
+body #game-container #fields .field .field-progress div {
+  width: 10%;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+body #game-container #fields .field .field-progress.harvest div {
+  background-color: #4CAF50;
+}
+body #game-container #fields .field .field-progress.water div {
+  background-color: #577bbddb;
+}
+body #game-container #fields .field button {
+  margin: 15px auto;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  padding: 7px 15px;
+  background: #585642db;
+  color: white;
+  font-size: 1em;
+  font-weight: 100;
+  border-style: outset;
+  border-radius: 15px;
+  cursor: pointer;
+}
+body #game-container #fields .field.completed img {
+  background-color: #577bbddb;
+}
+body #game-container #fields .field.completed progress {
+  opacity: 0;
+}
+body #game-container #fields .field.completed button {
+  opacity: 1;
+}

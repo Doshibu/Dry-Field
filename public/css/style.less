@@ -8,16 +8,19 @@ body {
     margin: 0;
 
     #end-game-wrapper {
+        display: flex;
+        z-index: -1;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         position: absolute;
         width: 100%;
         height: 100%;
         top: 0;
         left: 0;
-        display: none;
         font-size: 2.5em;
         text-align: center;
         background: #000000c9;
-        padding: 150px 0;
         color: wheat;
 
         &.open {
@@ -26,6 +29,8 @@ body {
         }
 
         p {
+            visibility: hidden;
+
             &:nth-child(1) {
                 color: #ec1b1b;
             }
