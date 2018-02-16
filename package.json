@@ -11,7 +11,7 @@
     "build": "npm run lessc && npm run build-production",
     "prestart": "npm run build",
     "start": "node node_modules/nodemon/bin/nodemon ./server.js",
-    "quality": "node node_modules/eslint/bin/eslint -o eslint.xml **/*.js & exit 0"
+    "quality": "node node_modules/eslint/bin/eslint -f checkstyle -o eslint.xml **/*.js & exit 0"
   },
   "repository": {
     "type": "git",
