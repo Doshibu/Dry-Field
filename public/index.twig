@@ -13,9 +13,13 @@
     <body>
         <div id="end-game-wrapper">
             <p>Game Over</p>
-            <p>You harvested and sold <span id="wrapper-score"></span> field</p>
             <p>
-                Wanna see score&nbsp;?
+                You harvested and sold <span id="wrapper-score"></span> field
+                <br />Choose a pseudo and save your score : <input id="input-pseudo" type="text"/>
+                <button id="save-score-btn" type="button">Save it !</button>
+            </p>
+            <p>
+                Wanna see others score&nbsp;?
                 <button id="get-score-btn" type="button">Get it !</button>
             </p>
         </div>
@@ -98,7 +102,7 @@
             })
 
             // SocketIO
-            var socket = io.connect('http://localhost:3000')
+            window.socket = io.connect('http://localhost:3000')
         </script>
     </body>
 </html>

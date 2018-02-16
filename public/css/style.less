@@ -13,7 +13,7 @@ body {
         height: 100%;
         top: 0;
         left: 0;
-        z-index: 0;
+        display: none;
         font-size: 2.5em;
         text-align: center;
         background: #000000c9;
@@ -21,6 +21,7 @@ body {
         color: wheat;
 
         &.open {
+            display: block;
             z-index: 15;
         }
 
@@ -28,7 +29,12 @@ body {
             &:nth-child(1) {
                 color: #ec1b1b;
             }
-            &:nth-child(3) button {
+            &:nth-child(2) input {
+                display: block;
+                margin: auto;
+                border-radius: 5px;
+            }
+            &:nth-child(2) button, &:nth-child(3) button {
                 margin: 15px auto;
                 display: block;
                 padding: 7px 15px;
