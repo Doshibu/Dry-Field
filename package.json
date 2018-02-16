@@ -4,11 +4,8 @@
   "description": "Farmer simulation game",
   "main": "server.js",
   "scripts": {
-    "pretest": "npm i && npm run quality --verbose",
     "test": "node node_modules/mocha/bin/mocha --recursive",
-    "prestart": "node_modules/.bin/brunch build",
-    "start": "node node_modules/nodemon/bin/nodemon ./server.js",
-    "quality": "node node_modules/eslint/bin/eslint **/*.js & exit 0"
+    "start": "node node_modules/nodemon/bin/nodemon ./server.js"
   },
   "repository": {
     "type": "git",

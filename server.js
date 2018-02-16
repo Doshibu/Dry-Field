@@ -28,28 +28,28 @@ server.listen(app.get('port'), function () {
 
 const mongoose = require('mongoose')
 const dbURI = 'mongodb://louis:password@ds233748.mlab.com:33748/dry-field'
-// // const ScoreController = require('./app/features/score/controller')
-// // mongoose.connect(dbURI)
-// const db = mongoose.connection
-// db.on('connected', () => {
-//   console.log('Mongoose default connection open to ' + dbURI)
-// // ScoreController.saveScore(10, 'louis')
-// // ScoreController.getAllScore()
-// })
+ // const ScoreController = require('./app/features/score/controller')
+mongoose.connect(dbURI)
+ const db = mongoose.connection
+ db.on('connected', () => {
+   console.log('Mongoose default connection open to ' + dbURI)
+ // ScoreController.saveScore(10, 'louis')
+ // ScoreController.getAllScore()
+ })
 
-// db.on('error', (err) => {
-//   console.log('Mongoose default connection error: ' + err)
-// })
+ db.on('error', (err) => {
+   console.log('Mongoose default connection error: ' + err)
+ })
 
-// db.on('disconnected', () => {
-//   console.log('Mongoose default connection disconnected')
-// })
+ db.on('disconnected', () => {
+   console.log('Mongoose default connection disconnected')
+ })
 
-// process.on('SIGINT', () => {
-//   db.close(() => {
-//     console.log('Mongoose default connection disconnected through app termination')
-//     process.exit(0)
-//   })
-// })
-// // mongoose.connect(dbURI)
-// module.exports = {db}
+ process.on('SIGINT', () => {
+   db.close(() => {
+     console.log('Mongoose default connection disconnected through app termination')
+     process.exit(0)
+   })
+ })
+ // mongoose.connect(dbURI)
+ module.exports = {db}
