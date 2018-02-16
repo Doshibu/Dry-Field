@@ -71,14 +71,16 @@ L’objectif de temps moyen de jeu est de 10 minutes et le temps maximum 15 minu
 ---
 
 ## How to play ?  :leaves:
+<!-- todo -->
 
 ### Game Environment
-
+<!-- todo -->
 
 ### Here we go :mushroom: ! During the simulation
+<!-- todo -->
 * While the game is running, ...
 
 ## Credits :beer: :trophy: 
 It was a school project realized by :
-- [Guillaume Bonhommeau]()
-- [Louis Gautier]()
+- [Guillaume Bonhommeau](https://github.com/Doshibu)
+- [Louis Gautier](https://github.com/LouisGautierTransway)
